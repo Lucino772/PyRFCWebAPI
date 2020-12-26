@@ -69,7 +69,7 @@ def read_table(id, table):
     conn = get_connection_by_id(id)
     if conn:
         data = request.get_json()
-        result = readtable(conn.conn, table, data.get('fields',[]), data.get('options'))
+        result = readtable(conn.conn, table, data.get('fields',[]), data.get('options',[]))
         return jsonify(result)
     else:
         return {}
