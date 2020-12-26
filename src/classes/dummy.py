@@ -6,7 +6,7 @@ class DummyPyRFCConnection:
         self.params = params
         self.__dummy__ = True
     
-    def call(self, func_name, options, **params):
+    def call(self, func_name, options={}, **params):
         return {
             'error': 'This is a dummy connection'
         }
