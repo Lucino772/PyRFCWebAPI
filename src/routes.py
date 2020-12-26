@@ -68,7 +68,7 @@ def bapi_call_or_description(id, bapi):
 def read_table(id, table):
     conn = get_connection_by_id(id)
     if conn:
-        data = request.json()
+        data = request.get_json()
         result = readtable(conn.conn, table, data.get('fields',[]), data.get('options'))
         return jsonify(result)
     else:
